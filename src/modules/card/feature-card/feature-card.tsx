@@ -1,5 +1,5 @@
 import { Card } from "semantic-ui-react";
-import "./card.less";
+import "./feature-card.less";
 
 const ReactCard = () => (
   <Card

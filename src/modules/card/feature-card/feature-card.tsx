@@ -1,13 +1,11 @@
-import { Card } from "semantic-ui-react";
+import type { FC } from "react";
+import { Card, type CardProps } from "semantic-ui-react";
+import classNames from "classnames";
+
 import "./feature-card.less";
 
-const ReactCard = () => (
-  <Card
-    href="#card-example-link-card"
-    header="Elliot Baker"
-    meta="Friend"
-    description="Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat."
-  />
+const ReactCard: FC<CardProps> = ({ className, ...props }) => (
+  <Card className={classNames("feature-card", className)} {...props} />
 );
 
 export default ReactCard;

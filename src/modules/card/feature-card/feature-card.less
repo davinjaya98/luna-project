@@ -1,0 +1,38 @@
+a.ui.card {
+  &.feature-card {
+    width: 124px;
+    height: 170px;
+    transition: 0.5s;
+    box-shadow: 0 2px 4px 0 #99c9e9, 0 0 0 2px #99c9e9;
+    justify-content: flex-end;
+
+    .image {
+      background-color: transparent;
+      display: flex;
+      align-items: flex-end;
+      flex: 1 1 auto;
+
+      img {
+        width: 65px;
+        max-height: 31px;
+      }
+    }
+    .content {
+      border-top: none;
+      flex: 1 1 15%;
+
+      .header {
+        color: #0d278f;
+      }
+    }
+
+    &:hover {
+      background-color: #0d278f;
+      .content {
+        .header {
+          color: white;
+        }
+      }
+    }
+  }
+}

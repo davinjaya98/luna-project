@@ -1,0 +1,17 @@
+---
+import MainLayout from "../layouts/main.astro";
+import BookingStep from "@modules/step/step";
+import { Container, Grid } from "semantic-ui-react";
+---
+
+<MainLayout title="Homepage">
+  <Container>
+    <Grid>
+      <Grid.Row>
+        <Grid.Column style={{ overflowX: "auto" }}>
+          <BookingStep />
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+  </Container>
+</MainLayout>

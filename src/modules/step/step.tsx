@@ -1,34 +1,30 @@
 import BookingForm from "@assets/form/booking/booking";
-import { Segment, Step } from "semantic-ui-react";
+import { Segment, Step as SURStep } from "semantic-ui-react";
 
-const BookingStep = () => (
+const Step = () => (
   <>
-    <Step.Group unstackable attached="top">
-      <Step>
-        <Step.Content>
-          <Step.Title>Home</Step.Title>
-        </Step.Content>
-      </Step>
-      <Step active>
-        <Step.Content>
-          <Step.Title>Booking</Step.Title>
-        </Step.Content>
-      </Step>
-      <Step disabled>
-        <Step.Content>
-          <Step.Title>Schedule</Step.Title>
-        </Step.Content>
-      </Step>
-      <Step disabled>
-        <Step.Content>
-          <Step.Title>Passenger Detail</Step.Title>
-        </Step.Content>
-      </Step>
-    </Step.Group>
-
-    <Segment attached>
-      <BookingForm />
-    </Segment>
+    <SURStep.Group unstackable attached="top">
+      <SURStep>
+        <SURStep.Content>
+          <SURStep.Title>Home</SURStep.Title>
+        </SURStep.Content>
+      </SURStep>
+      <SURStep active>
+        <SURStep.Content>
+          <SURStep.Title>Booking</SURStep.Title>
+        </SURStep.Content>
+      </SURStep>
+      <SURStep disabled>
+        <SURStep.Content>
+          <SURStep.Title>Schedule</SURStep.Title>
+        </SURStep.Content>
+      </SURStep>
+      <SURStep disabled>
+        <SURStep.Content>
+          <SURStep.Title>Passenger Detail</SURStep.Title>
+        </SURStep.Content>
+      </SURStep>
+    </SURStep.Group>
   </>
 );
-export default BookingStep;
+export default Step;

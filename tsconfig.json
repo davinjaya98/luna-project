@@ -8,6 +8,7 @@
       "@assets/*": ["src/modules/*"],
       "@components/*": ["src/components/*"],
       "@modules/*": ["src/modules/*"],
+      "@widgets/*": ["src/widgets/*"],
       "@styles/*": ["src/styles/*"]
     }
   }

@@ -1,17 +1,17 @@
 ---
 import MainLayout from "../layouts/main.astro";
 import { Card, Grid } from "semantic-ui-react";
-import ReactCard from "../modules/card/feature-card/feature-card.tsx";
+import FeatureCard from "../modules/card/feature-card/feature-card.tsx";
 ---
 
 <MainLayout title="Homepage">
   <Card.Group centered>
-    <ReactCard href="/booking" header="Booking" image="/assets/yatch.svg" />
-    <ReactCard
+    <FeatureCard href="/booking" header="Booking" image="/assets/yatch.svg" />
+    <FeatureCard
       href="/history"
       header="Booking History"
       image="/assets/calendar.svg"
     />
-    <ReactCard href="/profile" header="Profile" image="/assets/profile.svg" />
+    <FeatureCard href="/profile" header="Profile" image="/assets/profile.svg" />
   </Card.Group>
 </MainLayout>

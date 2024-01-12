@@ -1,29 +1,24 @@
-import { Grid, Container, Segment } from "semantic-ui-react";
-import "./footer.less";
+import { Row, Container, Col } from "react-bootstrap";
+import "./footer.scss";
 
 const Footer = () => (
-  <footer>
-    <Segment vertical inverted color="blue">
-      <Container>
-        <Grid verticalAlign="middle">
-          <Grid.Row columns="equal" className="footer__row">
-            <Grid.Column className="footer__column-left">
-              <p className="footer__column-left__company-name font-base-sm">
-                PT. Luna Global Travelindo
-              </p>
-              <p className="footer__column-left__copyright-text font-base-xs">
-                All Rights Reserved
-              </p>
-            </Grid.Column>
-            <Grid.Column textAlign="right" className="footer__column-right">
-              <span className="font-base-xs">
-                Become an Agent? <a href="#">Click Here</a>
-              </span>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
-    </Segment>
+  <footer className="bg-primary text-white py-4">
+    <Container>
+      <Row>
+        <Col>
+          <p className="font-base-sm mb-0">PT. Luna Global Travelindo</p>
+          <p className="font-base-xs mb-0">All Rights Reserved</p>
+        </Col>
+        <Col className="d-flex justify-content-end">
+          <span className="font-base-xs">
+            Become an Agent?{" "}
+            <a href="#" className="text-white">
+              Click Here
+            </a>
+          </span>
+        </Col>
+      </Row>
+    </Container>
   </footer>
 );
 

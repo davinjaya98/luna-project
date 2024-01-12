@@ -1,17 +1,42 @@
 ---
 import MainLayout from "../layouts/main.astro";
-import { Card, Grid } from "semantic-ui-react";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import FeatureCard from "../modules/card/feature-card/feature-card.tsx";
 ---
 
 <MainLayout title="Homepage">
-  <Card.Group centered>
-    <FeatureCard href="/booking" header="Booking" image="/assets/yatch.svg" />
-    <FeatureCard
-      href="/history"
-      header="Booking History"
-      image="/assets/calendar.svg"
-    />
-    <FeatureCard href="/profile" header="Profile" image="/assets/profile.svg" />
-  </Card.Group>
+  <Container>
+    <Row>
+      <Col>
+        <a href="/booking">
+          <FeatureCard>
+            <Card.Img variant="top" src="/assets/yatch.svg" />
+            <Card.Body>
+              <Card.Title>Booking</Card.Title>
+            </Card.Body>
+          </FeatureCard>
+        </a>
+      </Col>
+      <Col>
+        <a href="/history">
+          <FeatureCard>
+            <Card.Img variant="top" src="/assets/calendar.svg" />
+            <Card.Body>
+              <Card.Title>Booking History</Card.Title>
+            </Card.Body>
+          </FeatureCard>
+        </a>
+      </Col>
+      <Col>
+        <a href="/profile">
+          <FeatureCard>
+            <Card.Img variant="top" src="/assets/profile.svg" />
+            <Card.Body>
+              <Card.Title>Profile</Card.Title>
+            </Card.Body>
+          </FeatureCard>
+        </a>
+      </Col>
+    </Row>
+  </Container>
 </MainLayout>

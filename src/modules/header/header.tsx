@@ -1,25 +1,19 @@
-import { Button, Container, Grid, Icon, Segment } from "semantic-ui-react";
-import "./header.less";
+import { Button, Container, Navbar, Nav } from "react-bootstrap";
+import "./header.scss";
 
 const Header = () => (
-  <Segment vertical>
+  <Nav className="py-4">
     <Container>
-      <Grid>
-        <Grid.Row columns="equal">
-          <Grid.Column>
-            <Button primary>Logo</Button>
-          </Grid.Column>
-          <Grid.Column textAlign="right">
-            <Button icon secondary>
-              <Icon name="bell outline" />
-            </Button>
-            <Button icon primary>
-              <Icon name="log out" />
-            </Button>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+      <div className="d-flex align-items-center justify-content-between">
+        <Navbar.Brand href="#home">
+          <Button variant="primary">Logo</Button>
+        </Navbar.Brand>
+        <div className="d-flex gap-2">
+          <Button variant="outline-secondary">Register</Button>
+          <Button variant="secondary">Login</Button>
+        </div>
+      </div>
     </Container>
-  </Segment>
+  </Nav>
 );
 export default Header;

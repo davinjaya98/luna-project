@@ -1,20 +1,18 @@
 import { useState } from "react";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button } from "react-bootstrap";
 
 const BookingForm = () => {
-  const [showReturnDate, shouldShowReturnDate] = useState(false);
-  const [formState, setFormState] = useState({});
-
-  const handleChange = (e, { value }) => setFormState({ value });
-  const handleToggleChange = (e) => console.log(e.value);
-
   return (
-    <Form size="mini">
-      <Form.Group widths="equal">
-        <Form.Select
-          fluid
-          label="To"
-          options={[
+    <Form>
+      <Form.Group>
+        To
+        <Form.Select>
+          {[
+            {
+              key: "g",
+              text: "Gender",
+              value: "",
+            },
             {
               key: "m",
               text: "Malaysia",
@@ -25,15 +23,21 @@ const BookingForm = () => {
               text: "Singapore",
               value: "Singapore",
             },
-          ]}
-          placeholder="Gender"
-        />
+          ].map(({ key, text, value }) => (
+            <option value={value} key={key}>
+              {text}
+            </option>
+          ))}
+        </Form.Select>
       </Form.Group>
-      <Form.Group widths="equal">
-        <Form.Select
-          fluid
-          label="Date"
-          options={[
+      <Form.Group>
+        <Form.Select>
+          {[
+            {
+              key: "g",
+              text: "Gender",
+              value: "",
+            },
             {
               key: "m",
               text: "Malaysia",
@@ -44,11 +48,17 @@ const BookingForm = () => {
               text: "Singapore",
               value: "Singapore",
             },
-          ]}
-          placeholder="dd/mm/yy"
-          onChange={handleToggleChange}
+          ].map(({ key, text, value }) => (
+            <option value={value} key={key}>
+              {text}
+            </option>
+          ))}
+        </Form.Select>
+        <Form.Check // prettier-ignore
+          type="switch"
+          id="return-date"
+          label="Return date"
         />
-        <Form.Radio toggle label="Return Date" />
       </Form.Group>
       <Button type="submit">Submit</Button>
     </Form>

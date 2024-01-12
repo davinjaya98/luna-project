@@ -15,11 +15,11 @@
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "astro": "^4.0.8",
-    "fomantic-ui": "^2.9.3",
-    "less": "^4.2.0",
+    "bootstrap": "^5.3.2",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.9.2",
     "react-dom": "^18.2.0",
-    "semantic-ui-react": "^2.1.5",
+    "sass": "^1.69.7",
     "typescript": "^5.3.3"
   },
   "devDependencies": {

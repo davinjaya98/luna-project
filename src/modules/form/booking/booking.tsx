@@ -4,63 +4,43 @@ import { Form, Button } from "react-bootstrap";
 const BookingForm = () => {
   return (
     <Form>
-      <Form.Group>
-        To
-        <Form.Select>
+      <Form.Group className="mb-3" controlId="formDestination">
+        <p>
+          From <span style={{ fontSize: "200%" }}>Batam</span>
+        </p>
+        <Form.Label>To</Form.Label>
+        <Form.Select value="">
+          <option value="" key="" hidden>
+            Destination
+          </option>
           {[
             {
-              key: "g",
-              text: "Gender",
-              value: "",
+              text: "Johor",
+              value: "Johor",
             },
             {
-              key: "m",
-              text: "Malaysia",
-              value: "Malaysia",
-            },
-            {
-              key: "s",
               text: "Singapore",
               value: "Singapore",
             },
-          ].map(({ key, text, value }) => (
-            <option value={value} key={key}>
+          ].map(({ text, value }, index) => (
+            <option value={value} key={index}>
               {text}
             </option>
           ))}
         </Form.Select>
       </Form.Group>
-      <Form.Group>
-        <Form.Select>
-          {[
-            {
-              key: "g",
-              text: "Gender",
-              value: "",
-            },
-            {
-              key: "m",
-              text: "Malaysia",
-              value: "Malaysia",
-            },
-            {
-              key: "s",
-              text: "Singapore",
-              value: "Singapore",
-            },
-          ].map(({ key, text, value }) => (
-            <option value={value} key={key}>
-              {text}
-            </option>
-          ))}
-        </Form.Select>
+      <Form.Group className="mb-3" controlId="formDepartureDate">
+        <Form.Label>Date</Form.Label>
+        <Form.Control type="date" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formTwoWay">
         <Form.Check // prettier-ignore
           type="switch"
-          id="return-date"
-          label="Return date"
+          id="two-way"
+          label="Two Way"
         />
       </Form.Group>
-      <Button type="submit">Submit</Button>
+      <Button type="submit">Search</Button>
     </Form>
   );
 };

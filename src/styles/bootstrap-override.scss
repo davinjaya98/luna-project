@@ -1,9 +1,32 @@
-$primary: #0D278F;
-$secondary: #99C9E9;
+// Spacing
+$spacer: 16px;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+// Color - Semantic
+$primary: #0d278f;
+$secondary: #99c9e9;
 
 $theme-colors: (
   "primary": $primary,
-  "secondary": $secondary
+  "secondary": $secondary,
 );
+
+// Breadcrumb
+$breadcrumb-divider-color: $secondary;
+$breadcrumb-active-color: $primary;
+$breadcrumb-divider: quote(">");
+
+// Pagination
+$pagination-padding-y: map-get($spacers, 2);
+$pagination-padding-x: map-get($spacers, 3);
+
+$pagination-bg: #f1f1f1;
 
 @import "bootstrap/scss/bootstrap";

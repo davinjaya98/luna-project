@@ -5,35 +5,37 @@ import LocationDirectorLabel from "@components/form/location-director-label";
 import CircleButton from "@components/button/circle/circle-button";
 import ScheduleItem from "@components/form/schedule-item/schedule-item";
 
+import "./schedule.scss";
+
 const SchedulePicker = () => {
   return (
     <Form action="/schedule" method="get">
-      <Container>
+      <div>
         <LocationDirectorLabel director="From" location="Batam" />{" "}
         <LocationDirectorLabel director="To" location="Singapore" />
-      </Container>
-      <Pagination>
+      </div>
+      <Pagination className="schedule-pagination justify-content-between">
         <Pagination.Prev />
-        <Pagination.Item>{5}</Pagination.Item>
-        <Pagination.Item>{6}</Pagination.Item>
-        <Pagination.Item active>{7}</Pagination.Item>
-        <Pagination.Item>{8}</Pagination.Item>
-        <Pagination.Item disabled>{9}</Pagination.Item>
-        <Pagination.Item>{10}</Pagination.Item>
-        <Pagination.Item>{11}</Pagination.Item>
-        <Pagination.Item>{12}</Pagination.Item>
-        <Pagination.Item>{13}</Pagination.Item>
-        <Pagination.Item>{14}</Pagination.Item>
-        <Pagination.Item>{15}</Pagination.Item>
+        <div className="d-flex gap-2">
+          <Pagination.Item>{5}</Pagination.Item>
+          <Pagination.Item>{6}</Pagination.Item>
+          <Pagination.Item active>{7}</Pagination.Item>
+          <Pagination.Item>{8}</Pagination.Item>
+          <Pagination.Item>{9}</Pagination.Item>
+          <Pagination.Item>{10}</Pagination.Item>
+          <Pagination.Item>{11}</Pagination.Item>
+          <Pagination.Item>{12}</Pagination.Item>
+          <Pagination.Item>{13}</Pagination.Item>
+          <Pagination.Item>{14}</Pagination.Item>
+          <Pagination.Item>{15}</Pagination.Item>
+        </div>
         <Pagination.Next />
       </Pagination>
-      <Container>
-        <Row>
-          <Col>
-            <ScheduleItem />
-          </Col>
-        </Row>
-      </Container>
+      <Row>
+        <Col>
+          <ScheduleItem />
+        </Col>
+      </Row>
     </Form>
   );
 };

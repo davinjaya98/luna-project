@@ -1,0 +1,15 @@
+---
+import MainLayout from "../layouts/main.astro";
+import ScheduleStep from "@widgets/schedule-step/schedule-step";
+import { Container, Row, Col } from "react-bootstrap";
+---
+
+<MainLayout title="Homepage">
+  <Container>
+    <Row>
+      <Col style={{ overflowX: "auto" }}>
+        <ScheduleStep />
+      </Col>
+    </Row>
+  </Container>
+</MainLayout>

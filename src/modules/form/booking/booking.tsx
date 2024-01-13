@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import LocationDirectorLabel from "@components/form/location-director-label";
 
 const BookingForm = () => {
   return (
-    <Form>
+    <Form action="/schedule" method="get">
       <Form.Group className="mb-3" controlId="formDestination">
-        <p>
-          From <span style={{ fontSize: "200%" }}>Batam</span>
-        </p>
+        <div>
+          <LocationDirectorLabel director="From" location="Batam" />
+        </div>
         <Form.Label>To</Form.Label>
         <Form.Select value="">
           <option value="" key="" hidden>

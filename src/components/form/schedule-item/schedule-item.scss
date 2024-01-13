@@ -1,0 +1,35 @@
+.logo {
+  display: inline-block;
+  border-radius: 50%;
+  box-sizing: content-box;
+  white-space: nowrap;
+  text-align: center;
+  background: #0d278f;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
+.seatStatus {
+  display: inline-block;
+  border-radius: 50%;
+  box-sizing: content-box;
+  white-space: nowrap;
+  text-align: center;
+  background: #0d278f;
+  width: 0.8125rem;
+  height: 0.8125rem;
+  flex-shrink: 0;
+}
+
+.price {
+  display: inline-block;
+  border-radius: 50%;
+  box-sizing: content-box;
+  white-space: nowrap;
+  text-align: center;
+  background: #99c9e9;
+  width: 0.8125rem;
+  height: 0.8125rem;
+  flex-shrink: 0;
+}

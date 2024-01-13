@@ -7,9 +7,11 @@ import "./circle-button.scss";
 
 const CircleButton: FC<ButtonProps> = ({ className, ...props }) => (
   <Button className={classNames("circle", className)} {...props}>
-    <span>
-      <img src="/assets/chevron-left.svg" />
-    </span>
+    {
+      <span>
+        <img src="/assets/chevron-left.svg" />
+      </span>
+    }
   </Button>
 );
 

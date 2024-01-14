@@ -71,7 +71,7 @@ const BookingForm = () => {
         <Row>
           <Col sm="6">
             <div className="d-grid">
-              <Button variant="primary" size="lg" type="submit">
+              <Button variant="primary" type="submit">
                 Search
               </Button>
             </div>

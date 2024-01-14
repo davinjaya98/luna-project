@@ -29,4 +29,10 @@ $pagination-padding-x: map-get($spacers, 3);
 
 $pagination-bg: #f1f1f1;
 
+// Accordion
+$accordion-button-active-bg: $primary;
+$accordion-button-active-color: #ffffff;
+
+$accordion-icon-active-color: #ffffff;
+
 @import "bootstrap/scss/bootstrap";

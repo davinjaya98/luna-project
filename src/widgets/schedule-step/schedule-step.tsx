@@ -1,16 +1,10 @@
 import Step from "@modules/step/step";
 import SchedulePicker from "@modules/form/schedule/schedule";
-import { Breadcrumb } from "react-bootstrap";
+import { Breadcrumb } from "@components/breadcrumb/breadcrumb";
 
 const ScheduleStep = () => (
   <>
-    <Breadcrumb>
-      <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="/booking">Booking</Breadcrumb.Item>
-      <Breadcrumb.Item href="/schedule" active>
-        Schedule
-      </Breadcrumb.Item>
-    </Breadcrumb>
+    <Breadcrumb />
     <Step />
     <SchedulePicker />
   </>

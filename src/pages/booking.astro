@@ -1,15 +1,19 @@
 ---
 import MainLayout from "../layouts/main.astro";
-import BookingStep from "@widgets/booking-step/booking-step";
-import { Container, Row, Col } from "react-bootstrap";
+import { Breadcrumb } from "@components/breadcrumb/breadcrumb";
+import LocationDirectorLabel from "@components/form/location-director-label";
+import BookingForm from "@modules/form/booking/booking";
+import { Row, Col } from "react-bootstrap";
 ---
 
 <MainLayout title="Homepage">
-  <Container>
-    <Row>
-      <Col style={{ overflowX: "auto" }}>
-        <BookingStep />
+  <div class="h-100 d-flex align-items-center">
+    <Row className="justify-content-center flex-grow-1">
+      <Col>
+        <Breadcrumb />
+        <LocationDirectorLabel director="From" location="Batam" />
+        <BookingForm client:load />
       </Col>
     </Row>
-  </Container>
+  </div>
 </MainLayout>

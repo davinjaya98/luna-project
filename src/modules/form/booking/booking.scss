@@ -1,0 +1,10 @@
+@use "@styles/bootstrap-override" as bsVariables;
+
+.schedule-form {
+  .form-switch {
+    float: right;
+    @include bsVariables.media-breakpoint-up(sm) {
+      float: unset;
+    }
+  }
+}

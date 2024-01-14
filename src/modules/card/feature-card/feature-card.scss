@@ -1,35 +1,38 @@
-a.ui.card {
-  &.feature-card {
-    width: 124px;
-    height: 170px;
+@use "@styles/bootstrap-override" as bsVariables;
+@use "@styles/typography" as typography;
+
+.feature-card {
+  &.card {
+    aspect-ratio: 4/5;
     transition: 0.5s;
     box-shadow: 0 2px 4px 0 #99c9e9, 0 0 0 2px #99c9e9;
     justify-content: flex-end;
 
-    .image {
-      background-color: transparent;
-      display: flex;
-      align-items: flex-end;
-      flex: 1 1 auto;
-
-      img {
-        width: 65px;
-        max-height: 31px;
+    .card {
+      &-img-top {
+        // flex: 1 1 auto;
+        width: 55%;
       }
-    }
-    .content {
-      border-top: none;
-      flex: 1 1 15%;
+      &-body {
+        // border-top: none;
+        flex: 0 0 25%;
+      }
 
-      .header {
-        color: #0d278f;
+      &-title {
+        color: bsVariables.$primary;
+        text-decoration: none;
+        @include typography.font-base-md;
+
+        @include bsVariables.media-breakpoint-up(lg) {
+          @include typography.font-base-xl;
+        }
       }
     }
 
     &:hover {
       background-color: #0d278f;
-      .content {
-        .header {
+      .card {
+        &-title {
           color: white;
         }
       }

@@ -1,42 +1,38 @@
 ---
 import MainLayout from "../layouts/main.astro";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 import FeatureCard from "../modules/card/feature-card/feature-card.tsx";
 ---
 
 <MainLayout title="Homepage">
-  <Container>
-    <Row>
-      <Col>
-        <a href="/booking">
-          <FeatureCard>
-            <Card.Img variant="top" src="/assets/yatch.svg" />
-            <Card.Body>
-              <Card.Title>Booking</Card.Title>
-            </Card.Body>
-          </FeatureCard>
-        </a>
+  <div class="h-100 d-flex align-items-center">
+    <Row className="justify-content-center flex-grow-1">
+      <Col xs="4" lg="3">
+        <FeatureCard>
+          <Card.Img variant="top" src="/assets/yatch.svg" />
+          <Card.Body>
+            <FeatureCard.Title href="/booking">Booking</FeatureCard.Title>
+          </Card.Body>
+        </FeatureCard>
       </Col>
-      <Col>
-        <a href="/history">
-          <FeatureCard>
-            <Card.Img variant="top" src="/assets/calendar.svg" />
-            <Card.Body>
-              <Card.Title>Booking History</Card.Title>
-            </Card.Body>
-          </FeatureCard>
-        </a>
+      <Col xs="4" lg="3">
+        <FeatureCard>
+          <Card.Img variant="top" src="/assets/calendar.svg" />
+          <Card.Body>
+            <FeatureCard.Title href="/history">
+              Booking History
+            </FeatureCard.Title>
+          </Card.Body>
+        </FeatureCard>
       </Col>
-      <Col>
-        <a href="/profile">
-          <FeatureCard>
-            <Card.Img variant="top" src="/assets/profile.svg" />
-            <Card.Body>
-              <Card.Title>Profile</Card.Title>
-            </Card.Body>
-          </FeatureCard>
-        </a>
+      <Col xs="4" lg="3">
+        <FeatureCard>
+          <Card.Img variant="top" src="/assets/profile.svg" />
+          <Card.Body>
+            <FeatureCard.Title href="/profile">Profile</FeatureCard.Title>
+          </Card.Body>
+        </FeatureCard>
       </Col>
     </Row>
-  </Container>
+  </div>
 </MainLayout>

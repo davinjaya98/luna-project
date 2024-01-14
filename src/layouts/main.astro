@@ -8,8 +8,9 @@ interface Props {
 
 const { title } = Astro.props;
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "@styles/styles.scss";
+import { Container } from "react-bootstrap";
 ---
 
 <!doctype html>
@@ -25,7 +26,9 @@ import "@styles/styles.scss";
   <body>
     <div class="main-layout">
       <Header />
-      <slot />
+      <Container className="main-layout__content">
+        <slot />
+      </Container>
       <Footer />
     </div>
   </body>
@@ -34,11 +37,25 @@ import "@styles/styles.scss";
   .main-layout {
     min-height: 100vh;
     position: relative;
+    display: flex;
+  }
+
+  .main-layout nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .main-layout .main-layout__content {
+    padding-top: 86px;
+    padding-bottom: 87px;
   }
 
   .main-layout footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+    z-index: 1;
   }
 </style>

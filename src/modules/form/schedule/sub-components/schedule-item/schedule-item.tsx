@@ -3,12 +3,18 @@ import { Card, type CardProps } from "react-bootstrap";
 
 import "./schedule-item.scss";
 
+export interface ItemPricing {
+  type: string;
+  price: number;
+  twoWay?: number;
+}
 export interface Item {
   providerName: string;
   availableSeat: number;
   date: string;
   departureTime: string;
   arrivalTime: string;
+  pricing: [ItemPricing];
 }
 
 const ScheduleItem = (item: Item) => {
@@ -56,7 +62,9 @@ const ScheduleItem = (item: Item) => {
             </p>
             <div className="d-flex justify-content-start align-items-center">
               <div className="price me-2"></div>
-              <p className="mb-0">Rp 1.000.000</p>
+              <p className="mb-0">
+                Rp {Math.min(...item.pricing.flatMap((x) => x.price))}
+              </p>
             </div>
           </div>
         </Stack>

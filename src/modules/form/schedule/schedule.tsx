@@ -40,6 +40,20 @@ const SchedulePicker = () => {
             date: "Thu, 17 Jul 2023",
             departureTime: "07:30",
             arrivalTime: "08:30",
+            pricing: [
+              {
+                type: "infrant",
+                price: 200_000,
+              },
+              {
+                type: "teenager",
+                price: 300_000,
+              },
+              {
+                type: "adult",
+                price: 400_000,
+              },
+            ],
           },
           {
             providerName: "BatamFast",
@@ -47,6 +61,13 @@ const SchedulePicker = () => {
             date: "Thu, 17 Jul 2023",
             departureTime: "08:30",
             arrivalTime: "09:30",
+            pricing: [
+              {
+                type: "all",
+                price: 300_000,
+                twoWay: 360_000,
+              },
+            ],
           },
         ].map((item) => (
           <Row>

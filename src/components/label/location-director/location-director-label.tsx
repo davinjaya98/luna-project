@@ -1,6 +1,12 @@
 import "./location-director-label.scss";
 
-const LocationDirectorLabel = ({ director, location }) => {
+const LocationDirectorLabel = ({
+  director,
+  location,
+}: {
+  director: string;
+  location: string;
+}) => {
   return (
     <span>
       {director} <span className="location">{location}</span>

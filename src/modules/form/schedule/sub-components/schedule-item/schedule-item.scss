@@ -1,3 +1,10 @@
+.schedule-item {
+  &.card {
+    border: 2px solid #99c9e9;
+    padding: 8px;
+  }
+}
+
 .logo {
   display: inline-block;
   border-radius: 50%;

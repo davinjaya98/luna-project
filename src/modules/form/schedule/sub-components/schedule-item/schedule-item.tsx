@@ -1,10 +1,19 @@
 import { Container, Stack } from "react-bootstrap";
+import { Card, type CardProps } from "react-bootstrap";
 
 import "./schedule-item.scss";
 
-const ScheduleItem = () => {
+export interface Item {
+  providerName: string;
+  availableSeat: number;
+  date: string;
+  departureTime: string;
+  arrivalTime: string;
+}
+
+const ScheduleItem = (item: Item) => {
   return (
-    <Container className="border p-2">
+    <Card className="schedule-item">
       <Stack direction="vertical" gap={3}>
         <Stack
           direction="horizontal"
@@ -13,11 +22,13 @@ const ScheduleItem = () => {
         >
           <div className="d-flex align-items-center">
             <div className="logo me-2"></div>
-            <p className="mb-0">Name</p>
+            <p className="mb-0">{item.providerName}</p>
           </div>
           <div className="d-flex justify-content-end align-items-center">
             <div className="seatStatus me-2"></div>
-            <p className="mb-0">46 Seat Available</p>
+            <p className="mb-0">
+              <strong>{item.availableSeat} Seat</strong> Available
+            </p>
           </div>
         </Stack>
         <Stack
@@ -26,15 +37,23 @@ const ScheduleItem = () => {
           className="justify-content-between align-items-stretch"
         >
           <div className="d-flex align-items-start flex-column">
-            <p className="mb-0">Date</p>
-            <p className="mb-0">Thu, 10 Jul 2023</p>
+            <p className="mb-0">
+              <strong>Date</strong>
+            </p>
+            <p className="mb-0">{item.date}</p>
           </div>
           <div className="d-flex align-items-start flex-column">
-            <p className="mb-0">Departure - Arrival</p>
-            <p className="mb-0">10:00 - 11:00</p>
+            <p className="mb-0">
+              <strong>Departure - Arrival</strong>
+            </p>
+            <p className="mb-0">
+              {item.departureTime} - {item.arrivalTime}
+            </p>
           </div>
           <div className="d-flex align-items-start flex-column">
-            <p className="mb-0">Price Start From</p>
+            <p className="mb-0">
+              <strong>Price Start From</strong>
+            </p>
             <div className="d-flex justify-content-start align-items-center">
               <div className="price me-2"></div>
               <p className="mb-0">Rp 1.000.000</p>
@@ -42,7 +61,7 @@ const ScheduleItem = () => {
           </div>
         </Stack>
       </Stack>
-    </Container>
+    </Card>
   );
 };
 

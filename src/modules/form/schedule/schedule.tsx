@@ -69,10 +69,10 @@ const SchedulePicker = () => {
               },
             ],
           },
-        ].map((item) => (
+        ].map((item, index) => (
           <Row>
             <Col>
-              <ScheduleItem {...(item as Item)} />
+              <ScheduleItem item={item as Item} selected={index === 0} />
             </Col>
           </Row>
         ))}

@@ -1,8 +1,8 @@
 .schedule-item {
-  &.card {
-    border: 2px solid #99c9e9;
-    padding: 8px;
-  }
+  border-width: 2px;
+  border-style: solid;
+  margin: 8px;
+  border-radius: 0.3125rem;
 }
 
 .logo {
@@ -39,4 +39,11 @@
   width: 0.8125rem;
   height: 0.8125rem;
   flex-shrink: 0;
+}
+
+.check {
+  min-width: 2rem;
+  outline-width: 2px;
+  outline-style: solid;
+  border-radius: 0.3125rem;
 }

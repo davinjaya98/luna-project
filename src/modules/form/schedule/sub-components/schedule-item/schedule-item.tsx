@@ -1,5 +1,4 @@
-import { Container, Stack } from "react-bootstrap";
-import { Card, type CardProps } from "react-bootstrap";
+import { Stack } from "react-bootstrap";
 
 import "./schedule-item.scss";
 
@@ -17,10 +16,21 @@ export interface Item {
   pricing: [ItemPricing];
 }
 
-const ScheduleItem = (item: Item) => {
+const ScheduleItem = ({
+  item,
+  selected,
+}: {
+  item: Item;
+  selected?: Boolean;
+}) => {
   return (
-    <Card className="schedule-item">
-      <Stack direction="vertical" gap={3}>
+    <Stack
+      direction="horizontal"
+      gap={1}
+      className="schedule-item align-items-stretch"
+      style={{ borderColor: selected ? "#0D278F" : "#99c9e9" }}
+    >
+      <Stack direction="vertical" gap={3} className="m-2">
         <Stack
           direction="horizontal"
           gap={3}
@@ -69,7 +79,16 @@ const ScheduleItem = (item: Item) => {
           </div>
         </Stack>
       </Stack>
-    </Card>
+      <div
+        className="check d-flex align-items-center justify-content-center"
+        style={{
+          backgroundColor: selected ? "#0D278F" : "transparent",
+          outlineColor: selected ? "#0D278F" : "#99c9e9",
+        }}
+      >
+        <img src="./assets/check.svg" alt="check" />
+      </div>
+    </Stack>
   );
 };
 

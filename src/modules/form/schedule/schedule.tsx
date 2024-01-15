@@ -5,10 +5,14 @@ import LocationDirectorLabel from "@components/label/location-director/location-
 import ScheduleItem, {
   type Item,
 } from "@modules/form/schedule/sub-components/schedule-item/schedule-item";
-
+import NavigationButton from "@components/button/navigation/navigation-button";
 import "./schedule.scss";
 
 const SchedulePicker = () => {
+  const [selectedIndex, setSelectedIndex] = useState<number | undefined>(
+    undefined
+  );
+
   return (
     <Form action="/schedule" method="get">
       <Stack direction="horizontal" gap={1}>
@@ -72,10 +76,27 @@ const SchedulePicker = () => {
         ].map((item, index) => (
           <Row>
             <Col>
-              <ScheduleItem item={item as Item} selected={index === 0} />
+              <ScheduleItem
+                item={item as Item}
+                selected={index === selectedIndex}
+              />
             </Col>
           </Row>
         ))}
+      </Stack>
+
+      <Stack direction="horizontal" gap={3} className="justify-content-between">
+        <NavigationButton
+          href="/booking"
+          style={{ backgroundColor: "#EEE", color: "#0D278F" }}
+        >
+          <img src="./assets/arrow-left-primary.svg" alt="arrow-left-primary" />
+          Back
+        </NavigationButton>
+        <NavigationButton>
+          Next
+          <img src="./assets/arrow-right-white.svg" alt="arrow-right-white" />
+        </NavigationButton>
       </Stack>
     </Form>
   );

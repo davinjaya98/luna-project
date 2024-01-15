@@ -9,7 +9,7 @@ const CircleButton: FC<ButtonProps> = ({ className, ...props }) => (
   <Button className={classNames("circle", className)} {...props}>
     {
       <span>
-        <img src="/assets/chevron-left.svg" />
+        <img src="/assets/arrow-left-white.svg" />
       </span>
     }
   </Button>

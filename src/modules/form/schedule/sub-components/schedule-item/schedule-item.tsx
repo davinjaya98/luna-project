@@ -30,7 +30,7 @@ const ScheduleItem = ({
       className="schedule-item align-items-stretch"
       style={{ borderColor: selected ? "#0D278F" : "#99c9e9" }}
     >
-      <Stack direction="vertical" gap={3} className="m-2">
+      <Stack direction="vertical" gap={3} className="m-3">
         <Stack
           direction="horizontal"
           gap={3}

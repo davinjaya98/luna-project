@@ -1,7 +1,9 @@
-.schedule-item {
+.list-group-item.schedule-item {
   border-width: 2px;
   border-style: solid;
   border-radius: 0.3125rem;
+  padding: 0;
+  margin-bottom: 0.8rem;
 }
 
 .logo {

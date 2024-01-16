@@ -1,13 +1,17 @@
 ---
 import MainLayout from "../layouts/main.astro";
-import ScheduleStep from "@widgets/schedule-step/schedule-step";
 import { Container, Row, Col } from "react-bootstrap";
+import Step from "@modules/step/step";
+import SchedulePicker from "@modules/form/schedule/schedule";
+import { Breadcrumb } from "@components/breadcrumb/breadcrumb";
 ---
 
 <MainLayout title="Homepage">
   <Row>
     <Col style={{ overflowX: "auto" }}>
-      <ScheduleStep />
+      <Breadcrumb />
+      <Step />
+      <SchedulePicker client:load />
     </Col>
   </Row>
 </MainLayout>

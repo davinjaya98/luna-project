@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, Button, Stack, Row, Col } from "react-bootstrap";
+import { Form, Stack, ListGroup } from "react-bootstrap";
 import Pagination from "react-bootstrap/Pagination";
 import LocationDirectorLabel from "@components/label/location-director/location-director-label";
 import ScheduleItem, {
@@ -36,7 +36,7 @@ const SchedulePicker = () => {
         </div>
         <Pagination.Next />
       </Pagination>
-      <Stack gap={3} className="mb-2">
+      <ListGroup className="mb-2">
         {[
           {
             providerName: "Magestic",
@@ -74,16 +74,13 @@ const SchedulePicker = () => {
             ],
           },
         ].map((item, index) => (
-          <Row>
-            <Col>
-              <ScheduleItem
-                item={item as Item}
-                selected={index === selectedIndex}
-              />
-            </Col>
-          </Row>
+          <ScheduleItem
+            item={item as Item}
+            selected={index === selectedIndex}
+            onClick={() => setSelectedIndex(index)}
+          />
         ))}
-      </Stack>
+      </ListGroup>
 
       <Stack direction="horizontal" gap={3} className="justify-content-between">
         <NavigationButton

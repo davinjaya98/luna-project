@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import { Stack } from "react-bootstrap";
 import { ListGroupItem, type ListGroupItemProps } from "react-bootstrap";
+import type { ScheduleItemProps } from "./type";
 
 import classNames from "classnames";
 import "./schedule-item.scss";
@@ -10,6 +11,7 @@ export type ItemPricing = {
   price: number;
   twoWay?: number;
 };
+
 export type Item = {
   providerName: string;
   availableSeat: number;
@@ -18,11 +20,6 @@ export type Item = {
   arrivalTime: string;
   pricing: [ItemPricing];
 };
-
-interface ScheduleItemProps extends ListGroupItemProps {
-  item: Item;
-  selected?: boolean;
-}
 
 const ScheduleItem: FC<ScheduleItemProps> = ({
   item,

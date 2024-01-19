@@ -1,3 +1,6 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
 // Spacing
 $spacer: 16px;
 $spacers: (
@@ -13,9 +16,12 @@ $spacers: (
 $primary: #0d278f;
 $secondary: #99c9e9;
 
-$theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "primary": $primary,
+    "secondary": $secondary,
+  )
 );
 
 // Breadcrumb

@@ -1,2 +1,41 @@
 @import "./bootstrap-override.scss";
 @import "./typography.scss";
+
+// Breadcrumb
+.breadcrumb {
+  &-item {
+    color: $secondary;
+
+    a {
+      @include font-base-md;
+      color: inherit;
+    }
+
+    &.active {
+      &::before {
+        color: $primary;
+      }
+    }
+  }
+}
+
+// Alert
+.alert {
+  @include font-base-md;
+
+  // Generate contextual modifier classes for colorizing the alert
+  @each $state in map-keys($theme-colors) {
+    &.alert-#{$state} {
+      @if $state == "warning" {
+        --#{$prefix}alert-color: var(--#{$prefix}white-rgb);
+        --#{$prefix}alert-bg: var(--#{$prefix}#{$state});
+      } @else {
+        --#{$prefix}alert-color: var(--#{$prefix}#{$state}-text-emphasis);
+        --#{$prefix}alert-bg: var(--#{$prefix}#{$state}-bg-subtle);
+      }
+
+      --#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-border-subtle);
+      --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text-emphasis);
+    }
+  }
+}

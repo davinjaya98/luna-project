@@ -10,7 +10,7 @@ import { Row, Col } from "react-bootstrap";
   <div class="h-100 d-flex align-items-center">
     <Row className="justify-content-center flex-grow-1">
       <Col>
-        <Breadcrumb />
+        <Breadcrumb client:only />
         <LocationDirectorLabel director="From" location="Batam" />
         <BookingForm client:load />
       </Col>

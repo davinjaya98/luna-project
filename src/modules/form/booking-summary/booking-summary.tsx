@@ -8,6 +8,7 @@ import {
   Stack,
   Image,
   Card,
+  Alert,
 } from "react-bootstrap";
 import LocationDirectorLabel from "@components/label/location-director/location-director-label";
 import BookingSummaryItem from "./booking-summary-item/booking-summary-item";
@@ -18,16 +19,10 @@ import classNames from "classnames";
 const BookingSummaryForm = () => {
   return (
     <>
-      <Stack
-        direction="horizontal"
-        gap={3}
-        className={classNames("p-2", "bg-warning", "mb-1")}
-      >
+      <Alert variant="warning" className="d-flex gap-3">
         <Image src="./assets/alert-white.svg" />
-        <p className={classNames("text-light", "m-0")}>
-          Please make sure all the information is correct!
-        </p>
-      </Stack>
+        Please make sure all the information is correct!
+      </Alert>
       <Row>
         <Col className="col-lg-6">
           <Stack direction="horizontal" gap={1}>

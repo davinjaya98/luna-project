@@ -9,7 +9,7 @@ import { Breadcrumb } from "@components/breadcrumb/breadcrumb";
 <MainLayout title="Homepage">
   <Row>
     <Col style={{ overflowX: "auto" }}>
-      <Breadcrumb />
+      <Breadcrumb client:only />
       <Step />
       <SchedulePicker client:load />
     </Col>

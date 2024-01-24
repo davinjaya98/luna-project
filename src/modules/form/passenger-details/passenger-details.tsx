@@ -2,7 +2,27 @@ import { useState } from "react";
 import { Form, Button, Row, Col, Stack, Accordion } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 
+import PassengerDetailsItem from "./passenger-details-item/passenger-details-item";
+import { PassengerDetail } from "./passenger-details-item/passenger-details-item";
+
 const PassengerDetailsForm = () => {
+  const [passengers, setPassengers] = useState<Array<PassengerDetail>>([
+    new PassengerDetail(
+      "Test1",
+      "TestPassport1",
+      "1986-02-01",
+      "2027-01-04",
+      "Malaysia" // not in option
+    ),
+    new PassengerDetail(
+      "Test2",
+      "TestPassport2",
+      "1999-09-09",
+      "2027-03-02",
+      "Indonesia"
+    ),
+  ]);
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -16,130 +36,14 @@ const PassengerDetailsForm = () => {
   return (
     <Stack gap={3}>
       <Accordion>
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>Passenger - 01</Accordion.Header>
-          <Accordion.Body>
-            <Stack gap={3}>
-              <Row>
-                <Col xs="6">
-                  <Form.Group controlId="name">
-                    <Form.Label>Name on Passport</Form.Label>
-                    <Form.Control type="text" placeholder="John Doe" />
-                  </Form.Group>
-                </Col>
-                <Col xs="6">
-                  <Form.Group controlId="passport">
-                    <Form.Label>Passport No.</Form.Label>
-                    <Form.Control type="text" placeholder="AXXXXXX" />
-                  </Form.Group>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs="6">
-                  <Form.Group controlId="dob">
-                    <Form.Label>Date of Birth</Form.Label>
-                    <Form.Control type="date" placeholder="dd/mm/yyyy" />
-                  </Form.Group>
-                </Col>
-                <Col xs="6">
-                  <Form.Group controlId="expiredDate">
-                    <Form.Label>Expired Date</Form.Label>
-                    <Form.Control type="date" placeholder="dd/mm/yyyy" />
-                  </Form.Group>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs="6">
-                  <Form.Group controlId="placeOfIssued">
-                    <Form.Label>Place of Issued</Form.Label>
-                    <Form.Select>
-                      <option>Please Select</option>
-                      <option value="Indonesia">Indonesia</option>
-                    </Form.Select>
-                  </Form.Group>
-                </Col>
-                <Col xs="6">
-                  <Form.Group>
-                    <Form.Label>Passenger Category</Form.Label>
-                    <div className="d-flex align-items-center gap-1">
-                      <span className="rounded-circle p-2 bg-secondary" />
-                      <span className="base-font-sm text-primary">Adult</span>
-                      <Button
-                        variant="outline-secondary"
-                        size="sm"
-                        className="rounded-circle"
-                      >
-                        i
-                      </Button>
-                    </div>
-                  </Form.Group>
-                </Col>
-              </Row>
-            </Stack>
-          </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="1">
-          <Accordion.Header>Passenger - 02</Accordion.Header>
-          <Accordion.Body>
-            <Stack gap={3}>
-              <Row>
-                <Col xs="6">
-                  <Form.Group controlId="name">
-                    <Form.Label>Name on Passport</Form.Label>
-                    <Form.Control type="text" placeholder="John Doe" />
-                  </Form.Group>
-                </Col>
-                <Col xs="6">
-                  <Form.Group controlId="passport">
-                    <Form.Label>Passport No.</Form.Label>
-                    <Form.Control type="text" placeholder="AXXXXXX" />
-                  </Form.Group>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs="6">
-                  <Form.Group controlId="dob">
-                    <Form.Label>Date of Birth</Form.Label>
-                    <Form.Control type="date" placeholder="dd/mm/yyyy" />
-                  </Form.Group>
-                </Col>
-                <Col xs="6">
-                  <Form.Group controlId="expiredDate">
-                    <Form.Label>Expired Date</Form.Label>
-                    <Form.Control type="date" placeholder="dd/mm/yyyy" />
-                  </Form.Group>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs="6">
-                  <Form.Group controlId="placeOfIssued">
-                    <Form.Label>Place of Issued</Form.Label>
-                    <Form.Select>
-                      <option>Please Select</option>
-                      <option value="Indonesia">Indonesia</option>
-                    </Form.Select>
-                  </Form.Group>
-                </Col>
-                <Col xs="6">
-                  <Form.Group>
-                    <Form.Label>Passenger Category</Form.Label>
-                    <div className="d-flex align-items-center gap-1">
-                      <span className="rounded-circle p-2 bg-secondary" />
-                      <span className="base-font-sm text-primary">Adult</span>
-                      <Button
-                        variant="outline-secondary"
-                        size="sm"
-                        className="rounded-circle"
-                      >
-                        i
-                      </Button>
-                    </div>
-                  </Form.Group>
-                </Col>
-              </Row>
-            </Stack>
-          </Accordion.Body>
-        </Accordion.Item>
+        {passengers.length !== 0 &&
+          passengers.map((passenger, index) => (
+            <PassengerDetailsItem
+              eventKey={index.toString()}
+              index={index + 1}
+              passenger={passenger}
+            />
+          ))}
       </Accordion>
       <div className="d-grid">
         <Button variant="secondary" onClick={handleShow}>

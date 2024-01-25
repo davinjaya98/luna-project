@@ -1,0 +1,13 @@
+---
+import MainLayout from "../layouts/main.astro";
+import { Container, Row, Col } from "react-bootstrap";
+import RegisterForm from "@modules/register/register";
+---
+
+<MainLayout title="Homepage">
+  <Row>
+    <Col style={{ overflowX: "auto" }}>
+      <RegisterForm />
+    </Col>
+  </Row>
+</MainLayout>

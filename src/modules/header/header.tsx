@@ -10,7 +10,9 @@ const Header = () => (
         </Navbar.Brand>
         <div className="d-flex gap-2">
           <Button variant="outline-secondary">Register</Button>
-          <Button variant="secondary">Login</Button>
+          <Button variant="secondary" href="/login">
+            Login
+          </Button>
         </div>
       </div>
     </Container>

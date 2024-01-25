@@ -5,6 +5,9 @@ const LoginForm = () => {
   const [buttonIsDisabled, setButtonIsDisabled] = useState(true);
   return (
     <Form className="d-flex flex-column">
+      <Button variant="primary" className="align-self-center" href="/">
+        Logo
+      </Button>
       <Form.Group className="mb-3" controlId="email">
         <Form.Label>Email</Form.Label>
         <Form.Control type="email" placeholder="ex: JohnDoe@luna.com" />

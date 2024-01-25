@@ -4,9 +4,11 @@ import Footer from "@modules/footer/footer.tsx";
 
 interface Props {
   title: string;
+  header?: Boolean;
+  footer?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, header, footer } = Astro.props;
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@styles/styles.scss";
@@ -25,11 +27,11 @@ import { Container } from "react-bootstrap";
   </head>
   <body>
     <div class="main-layout">
-      <Header />
+      {header !== false && <Header />}
       <Container className="main-layout__content">
         <slot />
       </Container>
-      <Footer />
+      {footer !== false && <Footer />}
     </div>
   </body>
 </html>

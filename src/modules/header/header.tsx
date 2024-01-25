@@ -9,7 +9,9 @@ const Header = () => (
           <Button variant="primary">Logo</Button>
         </Navbar.Brand>
         <div className="d-flex gap-2">
-          <Button variant="outline-secondary">Register</Button>
+          <Button variant="outline-secondary" href="/register">
+            Register
+          </Button>
           <Button variant="secondary" href="/login">
             Login
           </Button>

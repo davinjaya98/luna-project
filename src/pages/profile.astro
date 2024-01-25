@@ -1,0 +1,25 @@
+---
+import MainLayout from "../layouts/main.astro";
+import { Stack } from "react-bootstrap";
+import ProfileActionItem from "@modules/profile/profile-action-item/profile-action-item";
+import { profileActions } from "@utils/profile";
+import classNames from "classnames";
+---
+
+<MainLayout title="Profile">
+  <Stack
+    gap={3}
+    className={classNames(
+      "align-items-start",
+      "justify-content-between",
+      "mt-3",
+      "mb-3"
+    )}
+  >
+    {
+      profileActions.map((action) => {
+        return <ProfileActionItem text={action.text} link={action.link} />;
+      })
+    }
+  </Stack>
+</MainLayout>

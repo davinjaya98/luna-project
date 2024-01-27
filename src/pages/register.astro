@@ -5,8 +5,8 @@ import RegisterForm from "@modules/register/register";
 ---
 
 <MainLayout title="Homepage" header={false} footer={false}>
-  <Row>
-    <Col style={{ overflowX: "auto" }}>
+  <Row style={{ height: "100%"}}>
+    <Col style={{ overflowX: "auto", justifyContent: "center", alignItems: "center", display: "flex" }}>
       <RegisterForm />
     </Col>
   </Row>

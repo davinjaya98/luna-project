@@ -1,6 +1,10 @@
 ---
 import Header from "@modules/header/header.tsx";
 import Footer from "@modules/footer/footer.tsx";
+import {
+  QueryClient,
+  QueryClientProvider
+} from '@tanstack/react-query'
 
 interface Props {
   title: string;
@@ -13,6 +17,9 @@ const { title, header, footer } = Astro.props;
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@styles/styles.scss";
 import { Container } from "react-bootstrap";
+import { AuthProvider } from "../contexts/auth-context";
+
+const queryClient = new QueryClient();
 ---
 
 <!doctype html>
@@ -27,11 +34,15 @@ import { Container } from "react-bootstrap";
   </head>
   <body>
     <div class="main-layout">
-      {header !== false && <Header />}
-      <Container className="main-layout__content">
-        <slot />
-      </Container>
-      {footer !== false && <Footer />}
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          {header !== false && <Header />}
+            <Container className="main-layout__content">
+              <slot />
+            </Container>
+          {footer !== false && <Footer />}
+        </AuthProvider>
+      </QueryClientProvider>
     </div>
   </body>
 </html>
@@ -61,3 +72,4 @@ import { Container } from "react-bootstrap";
     z-index: 1;
   }
 </style>
+../contexts/auth-context

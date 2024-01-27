@@ -8,7 +8,7 @@ const RegisterForm = () => {
       <Button variant="primary" className="align-self-center" href="/">
         Logo
       </Button>
-      <Form.Group className="mb-3" controlId="email">
+      <Form.Group className="mb-3 mt-5" controlId="email">
         <Form.Label>Email</Form.Label>
         <Form.Control type="email" placeholder="ex: JohnDoe@luna.com" />
       </Form.Group>
@@ -20,10 +20,10 @@ const RegisterForm = () => {
         <Form.Label>Confirm Password</Form.Label>
         <Form.Control type="password" placeholder="Confirm Password" />
       </Form.Group>
-      <Button variant="primary" type="submit" disabled={buttonIsDisabled}>
+      <Button className="mt-5" variant="primary" type="submit" disabled={buttonIsDisabled}>
         Register
       </Button>
-      <Form.Text className="mb-3 text-center">
+      <Form.Text className="text-center mt-5">
         or you already have an account yet? <a href="/login">Login Here</a>
       </Form.Text>
     </Form>

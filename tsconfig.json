@@ -5,7 +5,9 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "paths": {
+      "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
+      "@contexts/*": ["src/contexts/*"],
       "@modules/*": ["src/modules/*"],
       "@widgets/*": ["src/widgets/*"],
       "@styles/*": ["src/styles/*"],

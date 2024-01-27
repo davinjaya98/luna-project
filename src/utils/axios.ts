@@ -6,9 +6,8 @@ declare module 'axios' {
   }
 }
 
-
 const http = axios.create({
-  baseURL: "http://localhost:4001",
+  baseURL: import.meta.env.PUBLIC_API_URL,
   timeout: 30000,
   headers: {
     Accept: "application/json",

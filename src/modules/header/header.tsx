@@ -1,11 +1,12 @@
 import { Button, Container, Navbar, Nav } from "react-bootstrap";
 import "./header.scss";
-import { useAuth } from "@contexts/auth-context";
 import Bell from "@assets/bell.svg?react";
 import Logout from "@assets/log-out.svg?react";
+import { useStore } from "@nanostores/react";
+import { isAuthenticated } from "src/stores/auth";
 
 const Header = () => {
-  const { isAuthenticated } = useAuth();
+  const $isAuthenticated = useStore(isAuthenticated);
   return (
     <Nav className="py-4" as="nav">
       <Container>
@@ -15,7 +16,7 @@ const Header = () => {
           </Navbar.Brand>
           <div className="d-flex gap-2">
             {
-              isAuthenticated ? (
+              $isAuthenticated ? (
                 <>
                   <Button variant="outline-secondary" href="/register">
                     <Bell />

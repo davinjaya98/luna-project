@@ -1,13 +1,13 @@
 ---
 import MainLayout from "../layouts/main.astro";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import RegisterForm from "@modules/register/register";
 ---
 
 <MainLayout title="Homepage" header={false} footer={false}>
   <Row style={{ height: "100%"}}>
     <Col style={{ overflowX: "auto", justifyContent: "center", alignItems: "center", display: "flex" }}>
-      <RegisterForm />
+      <RegisterForm client:load/>
     </Col>
   </Row>
 </MainLayout>

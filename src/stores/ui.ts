@@ -8,18 +8,11 @@ export interface IToast {
   show: boolean
 }
 
-export const toasts = atom<Array<IToast>>([
-  {
-    message:"abc",
-    bg:"danger",
-    delay:3000,
-    show:true
-  }
-]);
+export const toasts = atom<Array<IToast>>([]);
 
 export function showToast(message:string, bg:ToastBG, delay:number) {
   const $toasts = toasts.get();
-  let availableToast = $toasts.find((show) => !show);
+  let availableToast = $toasts.find((ts) => !ts.show);
   if (!availableToast) {
     availableToast = { message, bg, delay, show: true }
     $toasts.push(availableToast);
@@ -29,5 +22,5 @@ export function showToast(message:string, bg:ToastBG, delay:number) {
     availableToast.delay = delay;
     availableToast.show = true;
   }
-  toasts.set($toasts);
+  toasts.set([...$toasts]);
 }

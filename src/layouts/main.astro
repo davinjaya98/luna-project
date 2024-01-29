@@ -1,6 +1,7 @@
 ---
 import Header from "@modules/header/header.tsx";
 import Footer from "@modules/footer/footer.tsx";
+import Toast from "@components/toast/toast.tsx";
 
 interface Props {
   title: string;
@@ -29,6 +30,7 @@ import { Container } from "react-bootstrap";
       {header !== false && <Header />}
         <Container className="main-layout__content">
           <slot />
+          <Toast client:load/>
         </Container>
       {footer !== false && <Footer />}
     </div>

@@ -1,3 +1,4 @@
+import "./toast.scss";
 import { useStore } from "@nanostores/react";
 import { ToastContainer, Toast as BootstrapToast } from "react-bootstrap";
 import { toasts, type IToast } from "../../stores/ui";
@@ -17,7 +18,7 @@ const Toast = () => {
         $toasts.map((toast, idx) => {
           return (
             <BootstrapToast onClose={(e)=>onClose(toast)} key={idx} bg={toast.bg} show={toast.show} delay={toast.delay} autohide>
-              <BootstrapToast.Body>{toast.message}</BootstrapToast.Body>
+              <BootstrapToast.Body className="toast-message">{toast.message}</BootstrapToast.Body>
             </BootstrapToast>
           )
         })

@@ -1,0 +1,8 @@
+@use "@styles/bootstrap-override" as bsVariables;
+
+.form {
+  width: 100%;
+  @include bsVariables.media-breakpoint-up(xs) {
+    width: 600px;
+  }
+}

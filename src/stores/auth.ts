@@ -1,5 +1,6 @@
 import { atom } from "nanostores";
 import { me } from "../utils/rest-api/users";
+import { logout } from "../utils/rest-api/auth";
 
 export interface User {
   _id: string;
@@ -30,4 +31,10 @@ export const authenticate = async () => {
     user.set(undefined);
     isAuthenticated.set(false);
   }
+}
+export const invalidate = async() => {
+  await logout();
+  localStorage.removeItem("access_token");
+  user.set(undefined);
+  isAuthenticated.set(false);
 }

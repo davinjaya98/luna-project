@@ -3,7 +3,7 @@ import "./header.scss";
 import Bell from "@assets/bell.svg?react";
 import Logout from "@assets/log-out.svg?react";
 import { useStore } from "@nanostores/react";
-import { isAuthenticated } from "src/stores/auth";
+import { invalidate, isAuthenticated } from "src/stores/auth";
 
 const Header = () => {
   const $isAuthenticated = useStore(isAuthenticated);
@@ -21,7 +21,7 @@ const Header = () => {
                   <Button variant="outline-secondary" href="#notification">
                     <Bell />
                   </Button>
-                  <Button variant="secondary" href="#logout">
+                  <Button variant="secondary" href="#logout" onClick={invalidate}>
                     <Logout />
                   </Button>
                 </>

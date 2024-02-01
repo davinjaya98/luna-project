@@ -29,10 +29,10 @@ import { ViewTransitions } from 'astro:transitions';
   </head>
   <body>
     <div class="main-layout">
-      {header !== false && <Header client:load />}
+      {header !== false && <Header client:only />}
         <Container className="main-layout__content">
           <slot />
-          <Toast client:load transition:persist/>
+          <Toast client:only transition:persist/>
         </Container>
       {footer !== false && <Footer />}
     </div>

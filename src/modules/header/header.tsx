@@ -18,10 +18,10 @@ const Header = () => {
             {
               $isAuthenticated ? (
                 <>
-                  <Button variant="outline-secondary" href="/register">
+                  <Button variant="outline-secondary" href="#notification">
                     <Bell />
                   </Button>
-                  <Button variant="secondary" href="/login">
+                  <Button variant="secondary" href="#logout">
                     <Logout />
                   </Button>
                 </>

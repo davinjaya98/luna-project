@@ -10,9 +10,3 @@ import RegisterForm from "@modules/register/register";
     </Col>
   </Row>
 </MainLayout>
----
-<script>
-  if (isAuthenticated) navigate("/");
-import { navigate } from "astro:transitions/client";
-import { isAuthenticated } from "../stores/auth";
-</script>

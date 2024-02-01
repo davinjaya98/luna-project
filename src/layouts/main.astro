@@ -66,5 +66,13 @@ import { ViewTransitions } from 'astro:transitions';
 </style>
 <script >
   import { authenticate } from "@contexts/auth";
-  authenticate();
+import { navigate } from "astro:transitions/client";
+  const pathToRedirect = ["/login", "/register"];
+  const init = async() => {
+    await authenticate();
+    if (pathToRedirect.indexOf(window.location.pathname) >= 0) {
+      navigate("/");
+    }
+  }
+  init();
 </script>

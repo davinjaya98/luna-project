@@ -14,6 +14,7 @@ const { title, header, footer } = Astro.props;
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@styles/styles.scss";
 import { Container } from "react-bootstrap";
+import { ViewTransitions } from 'astro:transitions';
 ---
 <!doctype html>
 <html lang="en">
@@ -24,13 +25,14 @@ import { Container } from "react-bootstrap";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body>
     <div class="main-layout">
-      {header !== false && <Header />}
+      {header !== false && <Header client:load />}
         <Container className="main-layout__content">
           <slot />
-          <Toast client:load/>
+          <Toast client:load transition:persist/>
         </Container>
       {footer !== false && <Footer />}
     </div>

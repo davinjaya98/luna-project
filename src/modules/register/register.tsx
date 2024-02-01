@@ -2,6 +2,7 @@ import { useState, type FormEvent, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { register } from "../../utils/rest-api/users";
 import { showToast } from "../../stores/ui";
+import { navigate } from 'astro:transitions/client';
 import "./register.scss"
 
 type RegisterForm = {
@@ -33,6 +34,8 @@ const RegisterForm = () => {
     e.preventDefault();
     try {
       await register(form.email, form.password, form.passwordConfirm);
+      showToast("Registration success", "success", 3000);
+      navigate("/login");
     } catch (e:any) {
       const responseMessage = e.response.data.message;
       if (Array.isArray(responseMessage)) {

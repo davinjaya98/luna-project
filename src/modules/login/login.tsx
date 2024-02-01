@@ -2,6 +2,8 @@ import { useState, type FormEvent } from "react";
 import { Form, Button } from "react-bootstrap";
 import { login } from "@utils/rest-api/auth";
 import { authenticate } from "src/stores/auth";
+import "./login.scss";
+import { navigate } from 'astro:transitions/client';
 
 const LoginForm = () => {
   const [form, setForm] = useState({
@@ -21,10 +23,11 @@ const LoginForm = () => {
     const token = res.data.data.token;
     localStorage.setItem("access_token", token);
     authenticate();
+    navigate("/");
   };
 
   return (
-    <Form onSubmit={onSubmitForm} action="/auth/login" method="post" className="d-flex flex-column" style={{ width:"20rem" }}>
+    <Form onSubmit={onSubmitForm} action="/auth/login" method="post" className="form d-flex flex-column">
       <Button variant="primary" className="align-self-center" href="/">
         Logo
       </Button>

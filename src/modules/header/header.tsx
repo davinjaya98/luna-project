@@ -21,7 +21,7 @@ const Header = () => {
                   <Button variant="outline-secondary" href="#notification">
                     <Bell />
                   </Button>
-                  <Button variant="secondary" href="#logout" onClick={invalidate}>
+                  <Button variant="secondary" href="/login" onClick={invalidate}>
                     <Logout />
                   </Button>
                 </>

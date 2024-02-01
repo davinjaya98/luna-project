@@ -25,7 +25,7 @@ import { ViewTransitions } from 'astro:transitions';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
+    <ViewTransitions fallback="none"/>
   </head>
   <body>
     <div class="main-layout">
@@ -65,14 +65,31 @@ import { ViewTransitions } from 'astro:transitions';
   }
 </style>
 <script >
-  import { authenticate } from "@contexts/auth";
-import { navigate } from "astro:transitions/client";
-  const pathToRedirect = ["/login", "/register"];
-  const init = async() => {
-    await authenticate();
-    if (pathToRedirect.indexOf(window.location.pathname) >= 0) {
-      navigate("/");
+  import { authenticate, isAuthenticated} from "@contexts/auth";
+  import { navigate } from "astro:transitions/client";
+  const disabledOnAuthPath = ["/login", "/register"];
+  const protectedPath = ["/history", "/profile"];
+  
+  const checkRoutes = async(event?:any) => {
+    const $isAuthenticated = isAuthenticated.get();
+    const currentPath = event ? event.to.pathname : window.location.pathname;
+    if (disabledOnAuthPath.indexOf(currentPath) >= 0 && $isAuthenticated) {
+      if (event) {
+        event.to.pathname = "/";
+      } else {
+        navigate("/");
+      }
+    } else if (protectedPath.indexOf(currentPath) >= 0 && !$isAuthenticated) {
+      if (event) {
+        event.to.pathname = "/login";
+      } else {
+        navigate("/login");
+      }
     }
   }
-  init();
+  
+  await authenticate();
+  checkRoutes();
+
+  document.addEventListener('astro:before-preparation', checkRoutes);
 </script>
